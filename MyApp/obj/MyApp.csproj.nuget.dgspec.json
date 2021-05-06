@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "/Users/a19082303/Projects/MyApp/MyApp/MyApp.csproj": {}
+    "/Users/a19082303/Desktop/MyApp/MyApp/MyApp.csproj": {}
   },
   "projects": {
-    "/Users/a19082303/Projects/MyApp/MyApp/MyApp.csproj": {
+    "/Users/a19082303/Desktop/MyApp/MyApp/MyApp.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/Users/a19082303/Projects/MyApp/MyApp/MyApp.csproj",
+        "projectUniqueName": "/Users/a19082303/Desktop/MyApp/MyApp/MyApp.csproj",
         "projectName": "MyApp",
-        "projectPath": "/Users/a19082303/Projects/MyApp/MyApp/MyApp.csproj",
+        "projectPath": "/Users/a19082303/Desktop/MyApp/MyApp/MyApp.csproj",
         "packagesPath": "/Users/a19082303/.nuget/packages/",
-        "outputPath": "/Users/a19082303/Projects/MyApp/MyApp/obj/",
+        "outputPath": "/Users/a19082303/Desktop/MyApp/MyApp/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "/Users/a19082303/.nuget/NuGet/NuGet.Config"
+          "/Users/a19082303/.config/NuGet/NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net5.0"

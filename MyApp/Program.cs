@@ -7,7 +7,12 @@ namespace TeleprompterConsole
 {
     class Program
     {
-        private static async Task ShowTelepromter()
+        static async Task Main(string[] args)
+        {
+            await RunTelepromter();
+        }
+
+        private static async Task ShowTelepromter(TelePrompterConfig config)
         {
             var words = ReadFrom("sampleQuotes.txt");
             foreach (var word in words)
@@ -15,25 +20,43 @@ namespace TeleprompterConsole
                 Console.Write(word);
                 if (!string.IsNullOrWhiteSpace(word))
                 {
-                    await Task.Delay(200);
+                    await Task.Delay(config.DelayInMilliseconds);
                 }
             }
+            config.SetDone();
         }
-        static void Main(string[] args)
+
+        private static async Task GetInput(TelePrompterConfig config)
         {
-            var lines = ReadFrom("sampleQuotes.txt");
-            foreach (var line in lines)
+            Action work = () =>
             {
-                Console.Write(line);
-                if (!string.IsNullOrWhiteSpace(line))
+                do
                 {
-                    var pause = Task.Delay(200);
-                    // Synchronously waiting on a task is an
-                    // anti-pattern. This will get fixed in later
-                    // steps.
-                    pause.Wait();
-                }
-            }
+                    var key = Console.ReadKey(true);
+                    if (key.KeyChar == '>')
+                    {
+                        config.UpdateDelay(-10);
+                    }
+                    else if (key.KeyChar == '<')
+                    {
+                        config.UpdateDelay(10);
+                    }
+                    else if (key.KeyChar == 'X' || key.KeyChar == 'x')
+                    {
+                        config.SetDone();
+                    }
+                } while (!config.Done);
+            };
+            await Task.Run(work);
+        }
+
+        private static  async Task RunTelepromter()
+        {
+            var config = new TelePrompterConfig();
+            var displayTask = ShowTelepromter(config);
+
+            var speedTask = GetInput(config);
+            await Task.WhenAny(displayTask, speedTask);
         }
 
         static IEnumerable<string> ReadFrom(string file)
