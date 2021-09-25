@@ -1,13 +1,13 @@
 # MyApp
 
-Данный мини-проект был реализован по официальной документации С# (ссылка: https://docs.microsoft.com/en-gb/dotnet/csharp/tutorials/console-teleprompter) и является одним из первых шагов на пути к изучению C#.
+This mini-project was implemented according to the official C # documentation (link: https://docs.microsoft.com/en-gb/dotnet/csharp/tutorials/console-teleprompter) and is one of the first steps towards learning C #.
 
-В ходе его реализации было изучены такие функции .NET Core и языка C #, как:
+## In the course of its implementation, we studied such functions of .NET Core and the C # language as:
 
-1) Основы .NET Core CLI;
-2) Структура консольного приложения C #;
-3) Консольный ввод / вывод;
-4) Основы API файлового ввода-вывода в .NET;
-5) Основы асинхронного программирования на основе Tasks в .NET;
+1) .NET Core CLI basics;
+2) The structure of a C # console application;
+3) Console I / O;
+4) .NET File I / O API Fundamentals
+5) The basics of asynchronous programming based on Tasks in .NET;
 
-В результате было создано приложение, которое читает текстовый файл и выводит содержимое этого текстового файла на консоль. Вывод на консоль согласован с чтением вслух. Кроме того, пользователь может ускорить или замедлить темп, нажимая клавиши «<» (меньше) или «>» (больше), а также остановить вывод текста на консоль с помощью "x" или "X".
+As a result, an application was created that reads a text file and outputs the contents of this text file to the console. Console output is consistent with reading aloud. In addition, the user can speed up or slow down the tempo by pressing the <(less) or> (more) keys, and stop the text output to the console using "x" or "X".
